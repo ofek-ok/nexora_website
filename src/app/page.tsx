@@ -718,9 +718,7 @@ export default function LandingPage() {
                     <h4 className="text-sm font-extrabold text-white text-right">שלו סגל</h4>
                     <p className="text-[10px] text-blue-300 text-right font-medium">מייסד שותף ומנכ&quot;ל</p>
                   </div>
-                  <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-blue-500/90 border border-blue-300/50 flex items-center justify-center text-[9px] font-bold text-white shadow">
-                    CEO
-                  </div>
+
                 </div>
               </div>
 
@@ -737,9 +735,7 @@ export default function LandingPage() {
                     <h4 className="text-sm font-extrabold text-white text-right">אופק אוקונסקי</h4>
                     <p className="text-[10px] text-emerald-300 text-right font-medium">מייסד שותף, סמנכ&quot;ל תפעול וטכנולוגיות</p>
                   </div>
-                  <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500/90 border border-emerald-300/50 flex items-center justify-center text-[9px] font-bold text-white shadow">
-                    COO & CTO
-                  </div>
+
                 </div>
               </div>
 
