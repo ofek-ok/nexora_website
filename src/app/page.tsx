@@ -1180,7 +1180,7 @@ export default function LandingPage() {
                 {/* WhatsApp Alternative */}
                 <div className="text-center mt-8">
                   <a
-                    href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%A0%D7%95%D7%A5%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%99%D7%95%D7%AA%D7%A8%20%D7%A2%D7%9C%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%A8%D7%95%D7%95%D7%97%D7%99%D7%95%D7%AA%20%D7%97%D7%99%D7%A0%D7%9D"
+                    href="https://wa.me/972555172571?text=%D7%94%D7%99%D7%99%2C%20%D7%A0%D7%95%D7%A5%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%99%D7%95%D7%AA%D7%A8%20%D7%A2%D7%9C%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%A8%D7%95%D7%95%D7%97%D7%99%D7%95%D7%AA%20%D7%97%D7%99%D7%A0%D7%9D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-[#25D366] transition-colors duration-200"
@@ -1237,7 +1237,7 @@ export default function LandingPage() {
 
       {/* FLOATING WHATSAPP BUTTON */}
       <a
-        href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%A0%D7%95%D7%A5%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%99%D7%95%D7%AA%D7%A8%20%D7%A2%D7%9C%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%A8%D7%95%D7%95%D7%97%D7%99%D7%95%D7%AA%20%D7%97%D7%99%D7%A0%D7%9D"
+        href="https://wa.me/972555172571?text=%D7%94%D7%99%D7%99%2C%20%D7%A0%D7%95%D7%A5%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%99%D7%95%D7%AA%D7%A8%20%D7%A2%D7%9C%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%A8%D7%95%D7%95%D7%97%D7%99%D7%95%D7%AA%20%D7%97%D7%99%D7%A0%D7%9D"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl wa-pulse hover:scale-110 transition-transform duration-200"
