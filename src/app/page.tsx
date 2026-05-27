@@ -931,69 +931,72 @@ export default function LandingPage() {
       {/* SECTION 6: ROADMAP */}
       <section 
         id="roadmap" 
-        className="py-24 bg-white"
+        className="py-24 bg-[#0F172A] border-y border-slate-800/40 text-white relative overflow-hidden"
       >
+        {/* Decorative background glow */}
+        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] rounded-full bg-blue-600/5 blur-[120px] pointer-events-none" />
+
         <div className="max-w-4xl mx-auto px-6">
           
           <div className="text-center mb-16">
-            <span className="text-xs font-bold text-[#2563EB] tracking-wider uppercase mb-3 block">מפת הדרכים</span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A]">
-              הדרך שלך לחיסכון ושקט נפשי ב-4 צעדים קלים:
+            <span className="text-xs font-bold text-sky-400 tracking-wider uppercase mb-3 block">מפת הדרכים</span>
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white">
+              4 צעדים פשוטים בדרך לחיסכון ושקט נפשי מושלם
             </h2>
           </div>
 
           {/* Timeline steps */}
-          <div className="relative pr-6 md:pr-12 border-r-2 border-slate-100 space-y-12">
+          <div className="relative pr-8 md:pr-12 border-r-2 border-slate-800 space-y-12 max-w-2xl mx-auto">
             
             {/* Step 1 */}
             <div className="relative text-right">
               {/* Pulsing step number */}
-              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] md:translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border-2 border-[#2563EB] flex items-center justify-center text-xs md:text-sm font-bold text-[#2563EB] shadow-md shadow-blue-500/10">
+              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#0F172A] border-2 border-[#3B82F6] flex items-center justify-center text-xs md:text-sm font-bold text-[#3B82F6] shadow-md shadow-blue-500/20">
                 01
               </span>
               <div className="pr-6 md:pr-8">
-                <h3 className="text-base md:text-lg font-bold text-[#0F172A] mb-2">שלב 1: שיחת בדיקה (בחינם)</h3>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed max-w-2xl">
-                  אתה מראה לנו מה אתה קונֶה היום בארץ ובאיזה מחיר, ואנחנו בודקים לך תוך כמה ימים בכמה אפשר להביא את זה ישירות מחו"ל.
+                <h3 className="text-base md:text-lg font-bold text-white mb-2">שלב 1: שיחת אפיון ובדיקה (בחינם וללא התחייבות)</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  אתם משתפים אותנו במוצרים שאתם רוכשים כיום בארץ ובמחירם. תוך ימים בודדים אנחנו חוזרים אליכם עם אנליזה מדויקת: האם ואיך אפשר לייבא אותם ישירות, וכמה כסף תחסכו.
                 </p>
               </div>
             </div>
 
             {/* Step 2 */}
             <div className="relative text-right">
-              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center text-xs md:text-sm font-bold text-slate-500 shadow-md">
+              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#0F172A] border-2 border-slate-700 flex items-center justify-center text-xs md:text-sm font-bold text-slate-400 shadow-md">
                 02
               </span>
               <div className="pr-6 md:pr-8">
-                <h3 className="text-base md:text-lg font-bold text-[#0F172A] mb-2">שלב 2: איתור המפעל וסגירת המחיר</h3>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed max-w-2xl">
-                  אנחנו מוצאים את המפעל האמין ביותר בחו"ל, סוגרים את מחיר הרכש הנמוך ביותר ומפיקים את כל אישורי הייבוא הנדרשים.
+                <h3 className="text-base md:text-lg font-bold text-white mb-2">שלב 2: איתור המפעל וסגירת המחיר</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  אנחנו מאתרים את המפעל האמין והאיכותי ביותר בחו"ל, מנהלים מולו מו"מ להשגת מחיר המקור הנמוך ביותר, ומפיקים באופן מלא את כל אישורי הייבוא הנדרשים.
                 </p>
               </div>
             </div>
 
             {/* Step 3 */}
             <div className="relative text-right">
-              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border-2 border-slate-300 flex items-center justify-center text-xs md:text-sm font-bold text-slate-500 shadow-md">
+              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#0F172A] border-2 border-slate-700 flex items-center justify-center text-xs md:text-sm font-bold text-slate-400 shadow-md">
                 03
               </span>
               <div className="pr-6 md:pr-8">
-                <h3 className="text-base md:text-lg font-bold text-[#0F172A] mb-2">שלב 3: הובלה ושחרור מהמכס</h3>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed max-w-2xl">
-                  אנחנו מעלים את הסחורה לים או לאוויר, ומטפלים בכל הבירוקרטיה, הניירות והשחרור בנמלים בישראל.
+                <h3 className="text-base md:text-lg font-bold text-white mb-2">שלב 3: הובלה, לוגיסטיקה ושחרור מהמכס</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  אנחנו מעלים את הסחורה לים או לאוויר, ומנהלים מקצה לקצה את כל מערך השילוח, הניירת, הבירוקרטיה והשחרור בנמלים בישראל. הכל באחריותנו המלאה.
                 </p>
               </div>
             </div>
 
-            {/* Step 4 (Emerald green Success flag) */}
+            {/* Step 4 */}
             <div className="relative text-right">
-              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-white border-2 border-[#10B981] flex items-center justify-center text-xs md:text-sm font-bold text-[#10B981] shadow-md shadow-emerald-500/10">
+              <span className="absolute right-0 top-0 translate-x-[calc(50%+1px)] w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#0F172A] border-2 border-[#10B981] flex items-center justify-center text-xs md:text-sm font-bold text-[#10B981] shadow-md shadow-emerald-500/20">
                 04
               </span>
               <div className="pr-6 md:pr-8">
-                <h3 className="text-base md:text-lg font-bold text-[#10B981] mb-2">שלב 4: פריקה אצלך בעסק</h3>
-                <p className="text-slate-600 text-xs md:text-sm leading-relaxed max-w-2xl">
-                  משאית מגיעה ופורקת את המוצרים אצלך במחסן. אתה חותם, מתחיל למכור ומרוויח פי 2.
+                <h3 className="text-base md:text-lg font-bold text-[#10B981] mb-2">שלב 4: פריקה ישירות אצלכם בעסק</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  משאית מגיעה ופורקת את המוצרים ישירות במחסן שלכם. אתם רק חותמים, מתחילים למכור – ומקפיצים את שורת הרווח של העסק.
                 </p>
               </div>
             </div>
