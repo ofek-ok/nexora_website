@@ -1015,16 +1015,16 @@ export default function LandingPage() {
 
         <div className="max-w-3xl mx-auto px-6 relative z-10">
           
-          <div className="bg-[#1E293B] border border-slate-800 rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl relative">
+          <div className="bg-slate-900/50 border border-slate-800/80 rounded-3xl p-5 sm:p-8 md:p-12 shadow-2xl relative backdrop-blur-md">
             
             {/* Header copy */}
             <div className="text-center mb-8">
               <span className="text-xs font-bold text-[#10B981] tracking-widest uppercase block mb-3">בדיקת היתכנות חינם ללא התחייבות</span>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
-                חבל על כל חודש שאתה ממשיך לשלם ביוקר על מוצרים בארץ.
+                בואו נבדוק כמה כסף העסק שלכם יכול לחסוך כבר החודש
               </h2>
-              <p className="text-slate-400 text-xs md:text-sm max-w-md mx-auto">
-                השאר פרטים קצרים, ונחזור אליך עם תחזית חיסכון ראשונית למוצר שלך:
+              <p className="text-slate-300 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                השאירו פרטים קצרים, ונחזור אליכם עם אנליזה ראשונית של עלויות הייבוא עבור המוצר שלכם.
               </p>
             </div>
 
@@ -1053,7 +1053,7 @@ export default function LandingPage() {
                   {/* Full name input */}
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-2">
-                      שם מלא <span className="text-red-500">*</span>
+                      שם מלא
                     </label>
                     <div className="relative">
                       <input 
@@ -1062,7 +1062,7 @@ export default function LandingPage() {
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="ישראל ישראלי"
-                        className="w-full px-5 py-3.5 bg-slate-900/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12"
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-500 pointer-events-none">
                         <User className="w-4 h-4" />
@@ -1073,7 +1073,7 @@ export default function LandingPage() {
                   {/* Business name input */}
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-2">
-                      שם העסק <span className="text-red-500">*</span>
+                      שם העסק
                     </label>
                     <div className="relative">
                       <input 
@@ -1082,7 +1082,7 @@ export default function LandingPage() {
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
                         placeholder="שם החברה או העסק שלך"
-                        className="w-full px-5 py-3.5 bg-slate-900/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12"
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-500 pointer-events-none">
                         <Building className="w-4 h-4" />
@@ -1096,7 +1096,7 @@ export default function LandingPage() {
                   {/* Mobile Phone input */}
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-2">
-                      טלפון נייד <span className="text-red-500">*</span>
+                      טלפון נייד
                     </label>
                     <div className="relative">
                       <input 
@@ -1105,7 +1105,7 @@ export default function LandingPage() {
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="052-1234567"
-                        className="w-full px-5 py-3.5 bg-slate-900/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12"
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-500 pointer-events-none">
                         <Phone className="w-4 h-4" />
@@ -1116,7 +1116,7 @@ export default function LandingPage() {
                   {/* Email input */}
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-2">
-                      כתובת אימייל <span className="text-red-500">*</span>
+                      כתובת אימייל
                     </label>
                     <div className="relative">
                       <input 
@@ -1125,7 +1125,7 @@ export default function LandingPage() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="name@company.com"
-                        className="w-full px-5 py-3.5 bg-slate-900/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12 text-left"
+                        className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12 text-left"
                         dir="ltr"
                       />
                       <div className="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-500 pointer-events-none">
@@ -1138,7 +1138,7 @@ export default function LandingPage() {
                 {/* Product input (Textarea open field) */}
                 <div>
                   <label className="block text-xs font-bold text-slate-300 mb-2">
-                    מה המוצר שאתה קונה כרגע בארץ והיית רוצה לבדוק כמה הוא יעלה בייבוא ישיר? <span className="text-red-500">*</span>
+                    מה המוצר שאתם רוכשים כיום בארץ והייתם רוצים לבדוק כמה הוא יעלה בייבוא ישיר?
                   </label>
                   <div className="relative">
                     <textarea 
@@ -1147,7 +1147,7 @@ export default function LandingPage() {
                       onChange={(e) => setProduct(e.target.value)}
                       placeholder="לדוגמה: כלי עבודה ממתכת, חלקי פלסטיק למכונות, ריהוט משרדי מעץ מורכב..."
                       rows={3}
-                      className="w-full px-5 py-3.5 bg-slate-900/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12 resize-none"
+                      className="w-full px-5 py-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500/25 outline-none transition-all pr-12 resize-none"
                     />
                     <div className="absolute top-4 right-4 text-slate-500 pointer-events-none">
                       <Package className="w-4 h-4" />
@@ -1178,7 +1178,7 @@ export default function LandingPage() {
                 </button>
 
                 {/* WhatsApp Alternative */}
-                <div className="text-center mt-3">
+                <div className="text-center mt-8">
                   <a
                     href="https://wa.me/972500000000?text=%D7%94%D7%99%D7%99%2C%20%D7%A0%D7%95%D7%A5%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%99%D7%95%D7%AA%D7%A8%20%D7%A2%D7%9C%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%A8%D7%95%D7%95%D7%97%D7%99%D7%95%D7%AA%20%D7%97%D7%99%D7%A0%D7%9D"
                     target="_blank"
@@ -1201,11 +1201,11 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="py-20 bg-[#F8FAFC] border-t border-slate-100">
+      <section className="py-20 bg-[#0F172A] border-t border-slate-800/60 text-white">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12 reveal">
-            <span className="text-xs font-bold text-[#2563EB] tracking-wider uppercase mb-3 block">שאלות ותשובות</span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#0F172A]">כל מה שרצית לדעת</h2>
+            <span className="text-xs font-bold text-sky-400 tracking-wider uppercase mb-3 block">שאלות ותשובות</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">כל מה שרצית לדעת</h2>
           </div>
           <div className="space-y-3">
             {[
@@ -1216,16 +1216,16 @@ export default function LandingPage() {
               { q: 'האם צריך לשלם מראש על השירות?', a: 'לא! שלב בדיקת ההיתכנות הוא חינמי לגמרי. אתה משלם לנו רק לאחר שמצאנו לך חיסכון משמעותי, אישרת את ההזמנה וכל התנאים סגורים ומוסכמים.' },
               { q: 'עם אילו מדינות אתם עובדים?', a: 'בעיקר עם סין (SZX-HUB), טורקיה, הודו, ויאטנם וארה"ב. אנחנו מחוברים למאגר של מפעלים מאומתים ב-18 מדינות ייצור שונות.' }
             ].map((faq, i) => (
-              <div key={i} className="reveal bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+              <div key={i} className="reveal bg-slate-900/50 rounded-2xl border border-slate-800/80 shadow-sm overflow-hidden transition-all duration-300 hover:border-blue-500/20">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 text-right font-bold text-[#0F172A] text-sm hover:bg-slate-50 transition-colors gap-4"
+                  className="w-full flex items-center justify-between p-5 text-right font-bold text-white text-sm hover:bg-slate-800/30 transition-colors gap-4"
                 >
                   <span>{faq.q}</span>
                   <ChevronDown className={`w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} />
                 </button>
                 {openFaq === i && (
-                  <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed text-right border-t border-slate-100 pt-4">
+                  <div className="px-5 pb-5 text-slate-300 text-sm leading-relaxed text-right border-t border-slate-800/80 pt-4">
                     {faq.a}
                   </div>
                 )}
