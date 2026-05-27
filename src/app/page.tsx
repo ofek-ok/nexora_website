@@ -24,7 +24,9 @@ import {
   TrendingUp,
   Target,
   Building,
-  Mail
+  Mail,
+  Rocket,
+  Shield
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -853,45 +855,74 @@ export default function LandingPage() {
       {/* SECTION 5: ANTI-BULLSHIT & RISK REDUCTION */}
       <section 
         id="risk" 
-        className="py-24 bg-[#F1F5F9]"
+        className="py-24 bg-[#0B0F19] border-y border-slate-800/80 text-white relative overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto px-6 text-right">
           
-          {/* Container with prominent glowing gradient border */}
-          <div className="bg-[#0F172A] text-white rounded-3xl p-5 sm:p-8 md:p-12 relative overflow-hidden shadow-2xl border border-blue-500/25">
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-blue-500/5 blur-[80px] pointer-events-none" />
-            
-            <span className="text-xs font-mono text-[#3B82F6] font-bold block mb-4 tracking-widest text-right">דברו דוגרי, בלי סיפורים</span>
-            
-            <h2 className="text-xl md:text-3xl font-extrabold text-right mb-6 text-white leading-tight">
-              בוא נשים את הקלפים על השולחן (ולמה כדאי לך לעבוד איתנו דווקא עכשיו)
-            </h2>
+          <span className="text-xs font-bold text-sky-400 tracking-wider uppercase mb-3 block">דברו דוגרי, בלי סיפורים</span>
+          
+          <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6">
+            בואו נשים את הקלפים על השולחן.
+          </h2>
 
-            <div className="space-y-5 text-slate-300 text-sm md:text-base text-right leading-relaxed mb-8">
-              <p>
-                אתה בטח אומר לעצמך עכשיו: "החבר'ה האלה נשמעים מעולה, אבל למה שאני אסמוך עליהם? איפה הלקוחות הקודמים שלהם? איפה הפידבקים?"
-              </p>
-              <p className="font-semibold text-white">
-                קבל את האמת דוגרי, בלי סיפורים: אנחנו חברה צעירה ורעבה. אין לנו 500 לקוחות תעשייתיים שיושבים לנו על הראש, וזה בדיוק היתרון הכי גדול שלך.
-              </p>
-              <p>
-                בחברות הגדולות והוותיקות, אתה תהיה עוד תיק לקוח קטן שנזרק בין פקידים, ואף אחד לא יענה לך בוואטסאפ בערב כשתהיה בלחץ על הסחורה שלך. אצלנו – אתה מלך. הפרויקט שלך מקבל 100% מהפוקוס, מהזמן ומהלב של שנינו באופן אישי. אנחנו נלחם על כל שקל ועל כל אישור מכס שלך כאילו זה העסק הפרטי שלנו.
-              </p>
-            </div>
+          <p className="text-lg md:text-xl font-bold text-slate-200 mb-8 border-r-4 border-sky-500/50 pr-4">
+            החבר'ה האלה נשמעים מעולה, אבל למה שנסמוך עליהם? איפה הניסיון של עשרות שנים?
+          </p>
 
-            {/* Zero Risk Box with Emerald highlights */}
-            <div className="p-4 sm:p-6 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col md:flex-row gap-4 items-start md:items-center text-right">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
-                <ShieldCheck className="w-6 h-6" />
+          <div className="space-y-6 mb-12 max-w-3xl">
+            {/* Bullet 1 */}
+            <div className="flex items-start gap-4 pr-1">
+              <div className="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 flex-shrink-0 mt-1">
+                <Target className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-emerald-400 mb-1">אנחנו מורידים את הסיכון שלך לאפס מוחלט:</h4>
-                <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
-                  אנחנו עובדים אך ורק על בסיס הצלחה ואבני דרך. בשלב הראשון אנחנו לא מבקשים ממך שקל על השירות. אנחנו עושים עבורך את בדיקת ההיתכנות, איתור המפעל וחישוב העלויות בחינם. אתה תשלם לנו על הניהול רק כשהכול מאושר, חתום ויוצא לדרך לפי התוכנית. <span className="text-white font-semibold">אם לא מצאנו לך חיסכון משמעותי – לא שילמת כלום.</span>
+                <h4 className="text-base sm:text-lg font-bold text-white mb-1">אתם לא עוד תיק שקבור בין פקידים</h4>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  בחברות הענק אף אחד לא יענה לכם בוואטסאפ בערב כשתהיו בלחץ על הסחורה. אצלנו אתם במרכז.
                 </p>
               </div>
             </div>
 
+            {/* Bullet 2 */}
+            <div className="flex items-start gap-4 pr-1">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 flex-shrink-0 mt-1">
+                <Rocket className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-white mb-1">100% מהפוקוס והלב שלנו</h4>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  הפרויקט שלכם מנוהל אישית על ידי המייסדים ומקבל עדיפות עליונה, מהרגע הראשון ועד הגעת המשלוח.
+                </p>
+              </div>
+            </div>
+
+            {/* Bullet 3 */}
+            <div className="flex items-start gap-4 pr-1">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-1">
+                <Shield className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-white mb-1">נלחמים על הכסף שלכם כאילו הוא שלנו</h4>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  אנחנו נלחם על כל שקל מול המפעלים, חברות השילוח והמכס. ההצלחה שלכם היא הדרך היחידה שלנו לצמוח.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Zero Risk Box - The Risk Reversal Card */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-[#0A0D18] border border-[#10B981]/40 flex flex-col md:flex-row gap-5 items-start text-right shadow-[0_0_30px_rgba(16,185,129,0.05)]">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0 shadow-[0_0_15px_rgba(16,185,129,0.15)] mt-1">
+              <ShieldCheck className="w-8 h-8" />
+            </div>
+            <div className="flex-1">
+              <h4 className="text-lg sm:text-xl font-extrabold text-[#10B981] mb-2.5">אנחנו מורידים את הסיכון שלכם לאפס מוחלט:</h4>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                אנחנו עובדים אך ורק על בסיס הצלחה ואבני דרך. בשלב הראשון אנחנו מבצעים עבורכם בדיקת היתכנות, איתור מפעל וחישוב עלויות – בחינם לחלוטין וללא שום התחייבות. אתם תשלמו על הניהול רק כשהכל מאושר ויוצא לדרך. אם לא מצאנו לכם חיסכון משמעותי – לא שילמתם כלום.
+              </p>
+            </div>
           </div>
 
         </div>
