@@ -52,6 +52,25 @@ export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Hovered Benefit for SVG sync
+  const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null);
+
+  // Parallax tilt effect
+  const [parallax, setParallax] = useState({ x: 0, y: 0 });
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!mapContainerRef.current) return;
+    const rect = mapContainerRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setParallax({ x: x * 8, y: y * 8 });
+  };
+
+  const handleMouseLeaveMap = () => {
+    setParallax({ x: 0, y: 0 });
+  };
+
   // Scroll-reveal refs
   const observerRef = useRef<IntersectionObserver | null>(null);
   useEffect(() => {
@@ -393,32 +412,56 @@ export default function LandingPage() {
 
             {/* Scannable Benefits Section */}
             <div className="space-y-4 mb-8 md:mb-10 text-right max-w-2xl">
-              <div className="flex items-start gap-3 reveal">
-                <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mt-1 flex-shrink-0">
+              <div 
+                className={`flex items-start gap-3 reveal cursor-pointer transition-all duration-300 hover:translate-x-[-4px] ${hoveredBenefit === 1 ? 'translate-x-[-4px]' : ''}`}
+                onMouseEnter={() => setHoveredBenefit(1)}
+                onMouseLeave={() => setHoveredBenefit(null)}
+              >
+                <div className={`w-6 h-6 rounded-lg border flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-300 ${
+                  hoveredBenefit === 1 
+                    ? 'bg-blue-500/20 border-blue-400 text-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.3)]' 
+                    : 'bg-blue-500/10 border-blue-500/25 text-blue-400'
+                }`}>
                   <Target className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-white text-sm md:text-base">איתור ישיר מהמפעל</span>
+                  <span className={`font-bold text-sm md:text-base transition-colors duration-300 ${hoveredBenefit === 1 ? 'text-blue-400' : 'text-white'}`}>איתור ישיר מהמפעל</span>
                   <span className="text-slate-300 text-sm md:text-base"> – הגעה למקור במחיר הנמוך ביותר.</span>
                 </div>
               </div>
               
-              <div className="flex items-start gap-3 reveal reveal-delay-1">
-                <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mt-1 flex-shrink-0">
+              <div 
+                className={`flex items-start gap-3 reveal reveal-delay-1 cursor-pointer transition-all duration-300 hover:translate-x-[-4px] ${hoveredBenefit === 2 ? 'translate-x-[-4px]' : ''}`}
+                onMouseEnter={() => setHoveredBenefit(2)}
+                onMouseLeave={() => setHoveredBenefit(null)}
+              >
+                <div className={`w-6 h-6 rounded-lg border flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-300 ${
+                  hoveredBenefit === 2 
+                    ? 'bg-blue-500/20 border-blue-400 text-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.3)]' 
+                    : 'bg-blue-500/10 border-blue-500/25 text-blue-400'
+                }`}>
                   <Package className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-white text-sm md:text-base">ניהול לוגיסטי מקצה לקצה</span>
+                  <span className={`font-bold text-sm md:text-base transition-colors duration-300 ${hoveredBenefit === 2 ? 'text-blue-400' : 'text-white'}`}>ניהול לוגיסטי מקצה לקצה</span>
                   <span className="text-slate-300 text-sm md:text-base"> – שילוח, מכס ושחרור באחריותנו.</span>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 reveal reveal-delay-2">
-                <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mt-1 flex-shrink-0">
+              <div 
+                className={`flex items-start gap-3 reveal reveal-delay-2 cursor-pointer transition-all duration-300 hover:translate-x-[-4px] ${hoveredBenefit === 3 ? 'translate-x-[-4px]' : ''}`}
+                onMouseEnter={() => setHoveredBenefit(3)}
+                onMouseLeave={() => setHoveredBenefit(null)}
+              >
+                <div className={`w-6 h-6 rounded-lg border flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-300 ${
+                  hoveredBenefit === 3 
+                    ? 'bg-blue-500/20 border-blue-400 text-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.3)]' 
+                    : 'bg-blue-500/10 border-blue-500/25 text-blue-400'
+                }`}>
                   <ShieldCheck className="w-3.5 h-3.5" />
                 </div>
                 <div>
-                  <span className="font-bold text-white text-sm md:text-base">ביטחון ושקט נפשי</span>
+                  <span className={`font-bold text-sm md:text-base transition-colors duration-300 ${hoveredBenefit === 3 ? 'text-blue-400' : 'text-white'}`}>ביטחון ושקט נפשי</span>
                   <span className="text-slate-300 text-sm md:text-base"> – אחריות מלאה על הסחורה עד דלת העסק.</span>
                 </div>
               </div>
@@ -443,7 +486,17 @@ export default function LandingPage() {
 
           {/* Left Column - Shipping Map Illustration (5 cols on desktop) */}
           <div className="lg:col-span-5 relative w-full flex items-center justify-center min-h-[260px] sm:min-h-[300px] lg:min-h-[400px]">
-            <div className="relative w-full max-w-lg aspect-[500/380] rounded-3xl bg-slate-900/50 border border-slate-800/80 p-4 shadow-2xl backdrop-blur-md">
+            <div 
+              ref={mapContainerRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeaveMap}
+              style={{
+                transform: `perspective(1000px) rotateY(${parallax.x}deg) rotateX(${-parallax.y}deg)`,
+                transition: 'transform 0.15s ease-out',
+                willChange: 'transform'
+              }}
+              className="relative w-full max-w-lg aspect-[500/380] rounded-3xl bg-slate-900/50 border border-slate-800/80 p-4 shadow-2xl backdrop-blur-md transition-all duration-300"
+            >
               
               {/* Map Title Tag */}
               <div className="absolute top-4 right-4 bg-slate-950/80 border border-slate-800 rounded-lg px-2.5 py-1 text-[10px] text-slate-400 font-mono flex items-center gap-1.5">
@@ -475,36 +528,34 @@ export default function LandingPage() {
                   <path d="M 30 100 C 60 90, 80 120, 70 150 C 40 170, 20 130, 30 100 Z" />
                 </g>
 
-                {/* Shipping Routes (Animate dash offset via CSS) */}
-                
                 {/* Route 1: China (Shenzhen) to Israel (Haifa) */}
                 <path 
                   id="china-route"
                   d="M 400 170 Q 320 200, 250 180" 
-                  stroke="#3B82F6" 
-                  strokeWidth="2.5" 
+                  stroke={hoveredBenefit === 2 ? "#38BDF8" : "#3B82F6"} 
+                  strokeWidth={hoveredBenefit === 2 ? "3.5" : "2.5"} 
                   strokeLinecap="round"
-                  className="animate-shipping-route" 
+                  className="animate-shipping-route transition-all duration-300" 
                 />
                 
                 {/* Route 2: USA (New York) to Israel */}
                 <path 
                   id="usa-route"
                   d="M 60 130 Q 150 150, 250 180" 
-                  stroke="#3B82F6" 
-                  strokeWidth="1.5" 
+                  stroke={hoveredBenefit === 2 ? "#38BDF8" : "#3B82F6"} 
+                  strokeWidth={hoveredBenefit === 2 ? "2.5" : "1.5"} 
                   strokeLinecap="round"
-                  className="animate-shipping-route-fast" 
+                  className="animate-shipping-route-fast transition-all duration-300" 
                 />
 
                 {/* Route 3: Europe (Hamburg) to Israel */}
                 <path 
                   id="europe-route"
                   d="M 160 90 Q 200 130, 250 180" 
-                  stroke="#3B82F6" 
-                  strokeWidth="1.5" 
+                  stroke={hoveredBenefit === 2 ? "#38BDF8" : "#3B82F6"} 
+                  strokeWidth={hoveredBenefit === 2 ? "2.5" : "1.5"} 
                   strokeLinecap="round"
-                  className="animate-shipping-route" 
+                  className="animate-shipping-route transition-all duration-300" 
                 />
 
                 {/* Ship Icon Animated along China Route */}
@@ -534,11 +585,11 @@ export default function LandingPage() {
                 {/* Nodes / Hub Locations */}
                 
                 {/* Hub: China */}
-                <g transform="translate(400, 170)">
-                  <circle r="12" fill="#2563EB" opacity="0.15" />
+                <g transform="translate(400, 170)" className="transition-all duration-300">
+                  <circle r={hoveredBenefit === 1 ? 18 : 12} fill="#2563EB" opacity={hoveredBenefit === 1 ? 0.35 : 0.15} className="transition-all duration-300" />
                   <circle r="6" fill="#2563EB" opacity="0.35" className="animate-ping" />
-                  <circle r="4" fill="#3B82F6" />
-                  <text y="-12" textAnchor="middle" fill="#94A3B8" fontSize="9" fontWeight="bold" className="font-sans">SZX-HUB (מרכז אספקה)</text>
+                  <circle r="4" fill={hoveredBenefit === 1 ? "#60A5FA" : "#3B82F6"} className="transition-all duration-300" />
+                  <text y="-12" textAnchor="middle" fill={hoveredBenefit === 1 ? "#38BDF8" : "#94A3B8"} fontSize="9" fontWeight="bold" className="font-sans transition-all duration-300 select-none">SZX-HUB (מרכז אספקה)</text>
                 </g>
 
                 {/* Hub: US East */}
@@ -554,11 +605,11 @@ export default function LandingPage() {
                 </g>
 
                 {/* Hub: Israel (Destination - Green success highlight) */}
-                <g transform="translate(250, 180)">
-                  <circle r="18" fill="#10B981" opacity="0.1" />
-                  <circle r="10" fill="#10B981" opacity="0.25" className="ping-ring" />
-                  <circle r="6" fill="#10B981" />
-                  <text y="22" textAnchor="middle" fill="#10B981" fontSize="10" fontWeight="bold" className="font-sans">העסק שלך (ישראל)</text>
+                <g transform="translate(250, 180)" className="transition-all duration-300">
+                  <circle r={hoveredBenefit === 3 ? 26 : 18} fill="#10B981" opacity={hoveredBenefit === 3 ? 0.25 : 0.1} className="transition-all duration-300" />
+                  <circle r={hoveredBenefit === 3 ? 14 : 10} fill="#10B981" opacity={hoveredBenefit === 3 ? 0.45 : 0.25} className="ping-ring transition-all duration-300" />
+                  <circle r="6" fill={hoveredBenefit === 3 ? "#34D399" : "#10B981"} className="transition-all duration-300" />
+                  <text y="22" textAnchor="middle" fill={hoveredBenefit === 3 ? "#34D399" : "#10B981"} fontSize={hoveredBenefit === 3 ? "11" : "10"} fontWeight="bold" className="font-sans transition-all duration-300 select-none">העסק שלך (ישראל)</text>
                 </g>
 
                 {/* Interactive Status Tag */}
