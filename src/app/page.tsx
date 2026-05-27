@@ -735,10 +735,10 @@ export default function LandingPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-[#0F172A]/10 to-transparent" />
                   <div className="absolute bottom-0 right-0 left-0 p-3">
                     <h4 className="text-sm font-extrabold text-white text-right">אופק אוקונסקי</h4>
-                    <p className="text-[10px] text-emerald-300 text-right font-medium">מייסד שותף, סמנכ&quot;ל תפעול</p>
+                    <p className="text-[10px] text-emerald-300 text-right font-medium">מייסד שותף, סמנכ&quot;ל תפעול וטכנולוגיות</p>
                   </div>
                   <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500/90 border border-emerald-300/50 flex items-center justify-center text-[9px] font-bold text-white shadow">
-                    COO
+                    COO & CTO
                   </div>
                 </div>
               </div>
