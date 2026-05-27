@@ -21,6 +21,8 @@ import {
   ChevronDown,
   DollarSign,
   AlertTriangle,
+  TrendingUp,
+  Target,
   Building,
   Mail
 } from 'lucide-react';
@@ -272,7 +274,7 @@ export default function LandingPage() {
           </div>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 border border-slate-800/80 rounded-full px-1.5 py-1 backdrop-blur-sm">
+          <nav className="hidden md:flex items-center gap-2 bg-slate-900/60 border border-slate-800/80 rounded-full px-2 py-1.5 backdrop-blur-sm">
             {[
               { id: 'hero', label: 'עמוד ראשי' },
               { id: 'pain', label: 'איך מוזילים עלויות?' },
@@ -284,7 +286,7 @@ export default function LandingPage() {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleScrollTo(e, link.id)}
-                className={`px-4 py-2 text-xs font-semibold rounded-full transition-all duration-200 ${
+                className={`px-5 py-2 text-xs font-semibold rounded-full transition-all duration-200 ${
                   activeSection === link.id
                     ? 'bg-[#2563EB] text-white shadow-sm'
                     : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -302,7 +304,7 @@ export default function LandingPage() {
               onClick={(e) => handleScrollTo(e, 'cta')}
               className="px-4.5 py-2.5 text-xs font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl transition-all duration-200 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-95 border border-blue-400/20"
             >
-              בדיקת רווחיות חינם
+              בדיקת רווחיות בחינם
             </a>
           </div>
 
@@ -346,7 +348,7 @@ export default function LandingPage() {
                 onClick={(e) => handleScrollTo(e, 'cta')}
                 className="w-full py-3 text-sm font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl text-center shadow-lg shadow-blue-500/20"
               >
-                בדיקת רווחיות חינם
+                בדיקת רווחיות בחינם
               </a>
             </div>
           </div>
@@ -377,46 +379,70 @@ export default function LandingPage() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-[46px] font-extrabold leading-tight tracking-tight text-white mb-6">
-              למה להמשיך לקנות מספקים בארץ ולשלם כפול, כשאפשר לייבא את אותם המוצרים בדיוק –
+            <h1 className="text-3xl md:text-5xl lg:text-[46px] font-extrabold leading-tight tracking-tight text-white mb-4 md:mb-6">
+              לייבא את המוצרים שלכם ישירות מהמפעל בחו"ל –
               <span className="text-[#3B82F6] block mt-2 relative">
-                בחצי מחיר ובאפס דאגות?
+                בחצי מחיר ובאפס דאגות.
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-lg md:text-xl font-medium text-slate-200 mb-8 border-r-4 border-[#2563EB] pr-4 max-w-2xl leading-relaxed">
-              חברת הייבוא שלוקחת אחריות מלאה על הסחורה שלך – מהמפעל בחו"ל ועד דלת העסק.
+            <p className="text-base md:text-xl font-medium text-slate-200 mb-6 md:mb-8 border-r-4 border-[#2563EB] pr-4 max-w-2xl leading-relaxed">
+              Nexora לוקחת אחריות מלאה על הסחורה שלכם, מהמפעל ועד דלת העסק. בלי בירוקרטיה ובלי כאבי ראש.
             </p>
 
-            {/* Explanatory texts */}
-            <div className="space-y-5 text-slate-300 max-w-2xl mb-10 text-sm md:text-base leading-relaxed">
-              <p>
-                הרבה בעלי עסקים בטוחים שייבוא מחו"ל מתאים רק לחברות ענק, ושזה דורש יותר מדי בלגן, בירוקרטיה ושבירת שיניים באנגלית מול ספקים. האמת היא שאתה לא צריך להבין בייבוא בשביל להרוויח ממנו.
-              </p>
-              <p className="font-semibold text-slate-100 flex items-center gap-2">
-                <Check className="w-5 h-5 text-[#10B981] flex-shrink-0" />
-                אנחנו עושים הכל בשבילך: מוצאים לך את המוצר ישירות מהמפעל בחו"ל במחיר הכי נמוך, מנהלים את השילוח בים ומשחררים מהמכס בארץ ישר אל דלת העסק שלך. אתה מקבל מוצרים זולים בהרבה, ושקט נפשי מוחלט.
-              </p>
+            {/* Scannable Benefits Section */}
+            <div className="space-y-4 mb-8 md:mb-10 text-right max-w-2xl">
+              <div className="flex items-start gap-3 reveal">
+                <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mt-1 flex-shrink-0">
+                  <Target className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="font-bold text-white text-sm md:text-base">איתור ישיר מהמפעל</span>
+                  <span className="text-slate-300 text-sm md:text-base"> – הגעה למקור במחיר הנמוך ביותר.</span>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-3 reveal reveal-delay-1">
+                <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mt-1 flex-shrink-0">
+                  <Package className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="font-bold text-white text-sm md:text-base">ניהול לוגיסטי מקצה לקצה</span>
+                  <span className="text-slate-300 text-sm md:text-base"> – שילוח, מכס ושחרור באחריותנו.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 reveal reveal-delay-2">
+                <div className="w-6 h-6 rounded-lg bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mt-1 flex-shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <span className="font-bold text-white text-sm md:text-base">ביטחון ושקט נפשי</span>
+                  <span className="text-slate-300 text-sm md:text-base"> – אחריות מלאה על הסחורה עד דלת העסק.</span>
+                </div>
+              </div>
             </div>
 
             {/* CTA Button */}
-            <a
-              href="#cta"
-              onClick={(e) => handleScrollTo(e, 'cta')}
-              className="group inline-flex items-center gap-3 px-8 py-4.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-2xl font-bold transition-all duration-200 shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 active:translate-y-0 text-right w-full sm:w-auto"
-            >
-              <div className="flex flex-col items-start">
-                <span className="text-sm font-extrabold text-white">לחץ כאן לבדיקת רווחיות בחינם</span>
-                <span className="text-xs text-blue-200 font-normal mt-0.5">נבדוק כמה כסף תחסוך אם תייבא את המוצר שלך</span>
-              </div>
-              <ArrowLeft className="w-5 h-5 text-white transition-transform group-hover:-translate-x-1" />
-            </a>
+            <div className="flex flex-col items-start gap-2.5 w-full sm:w-auto reveal reveal-delay-3">
+              <a
+                href="#cta"
+                onClick={(e) => handleScrollTo(e, 'cta')}
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-2xl font-bold transition-all duration-200 shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5 active:translate-y-0 text-center w-full sm:w-auto cursor-pointer"
+              >
+                <span className="text-base font-extrabold">לבדיקת רווחיות בחינם</span>
+                <ArrowLeft className="w-5 h-5 text-white transition-transform group-hover:-translate-x-1" />
+              </a>
+              <p className="text-xs text-slate-400 font-normal pr-2">
+                * נבדוק כמה כסף תחסוך אם תייבא את המוצר שלך *
+              </p>
+            </div>
 
           </div>
 
           {/* Left Column - Shipping Map Illustration (5 cols on desktop) */}
-          <div className="lg:col-span-5 relative w-full flex items-center justify-center min-h-[300px] lg:min-h-[400px]">
+          <div className="lg:col-span-5 relative w-full flex items-center justify-center min-h-[260px] sm:min-h-[300px] lg:min-h-[400px]">
             <div className="relative w-full max-w-lg aspect-[500/380] rounded-3xl bg-slate-900/50 border border-slate-800/80 p-4 shadow-2xl backdrop-blur-md">
               
               {/* Map Title Tag */}
