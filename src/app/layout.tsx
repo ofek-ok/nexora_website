@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "חוסכים עד 50% מעלויות הרכש שלכם. מעבירים את הרכש לייבוא ישיר מוגן ומנוהל מאסיה, אירופה וארה\"ב – באפס דאגות ובאחריות מלאה מקצה לקצה.",
   keywords: "ייבוא, לוגיסטיקה, ייבוא מסין, עמילות מכס, הוזלת רכש, שילוח בינלאומי, שילוח ימי, שילוח אווירי",
   authors: [{ name: "Nexora Logistics" }],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Nexora | פתרונות ייבוא ולוגיסטיקה חכמים לעסקים",
     description: "חוסכים עד 50% מעלויות הרכש שלכם. מעבירים את הרכש לייבוא ישיר מוגן ומנוהל מאסיה, אירופה וארה\"ב – באפס דאגות ובאחריות מלאה מקצה לקצה.",
@@ -23,9 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl" className="scroll-smooth">
-      <head>
-        <link rel="icon" href="/logo.png" />
-      </head>
       <body className="antialiased">{children}</body>
     </html>
   );
