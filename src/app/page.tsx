@@ -776,45 +776,44 @@ export default function LandingPage() {
       {/* SECTION 4: "מי אנחנו" */}
       <section 
         id="about" 
-        className="py-24 bg-[#F8FAFC]"
+        className="py-24 bg-[#0F172A] border-y border-slate-800/40 text-white relative overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        {/* Subtle decorative glow */}
+        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full bg-blue-600/5 blur-[120px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Photo Column - Real partner photos */}
             <div className="lg:col-span-5 order-2 lg:order-1 grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md mx-auto">
 
-              {/* Partner 1: Shalev – gray background photo (right in RTL) */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-slate-200/60 shadow-lg bg-white group hover:border-[#2563EB] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-full aspect-[3/4] relative overflow-hidden">
+              {/* Partner 1: Shalev */}
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900/50 border border-slate-800/80 p-3 group transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 text-right">
+                <div className="w-full aspect-[3/4] relative overflow-hidden rounded-xl">
                   <img
                     src="/shalev.jpg"
                     alt="שלו סגל – מייסד שותף ומנכ&quot;ל Nexora"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-[#0F172A]/10 to-transparent" />
-                  <div className="absolute bottom-0 right-0 left-0 p-3">
-                    <h4 className="text-sm font-extrabold text-white text-right">שלו סגל</h4>
-                    <p className="text-[10px] text-blue-300 text-right font-medium">מייסד שותף ומנכ&quot;ל</p>
-                  </div>
-
+                </div>
+                <div className="mt-3.5 pr-1">
+                  <h4 className="text-lg font-bold text-white mb-0.5">שלו סגל</h4>
+                  <p className="text-sm text-blue-400 font-medium">מייסד שותף ומנכ&quot;ל</p>
                 </div>
               </div>
 
-              {/* Partner 2: Ofek – blue background photo (left in RTL) */}
-              <div className="relative rounded-2xl overflow-hidden border-2 border-slate-200/60 shadow-lg bg-white group hover:border-[#10B981] hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-full aspect-[3/4] relative overflow-hidden">
+              {/* Partner 2: Ofek */}
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900/50 border border-slate-800/80 p-3 group transition-all duration-300 hover:-translate-y-1 hover:border-emerald-500/30 hover:shadow-lg hover:shadow-emerald-500/5 text-right">
+                <div className="w-full aspect-[3/4] relative overflow-hidden rounded-xl">
                   <img
                     src="/ofek.jpg"
                     alt="אופק אוקונסקי – מייסד שותף, סמנכ&quot;ל תפעול וטכנולוגיות Nexora"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-[#0F172A]/10 to-transparent" />
-                  <div className="absolute bottom-0 right-0 left-0 p-3">
-                    <h4 className="text-sm font-extrabold text-white text-right">אופק אוקונסקי</h4>
-                    <p className="text-[10px] text-emerald-300 text-right font-medium">מייסד שותף, סמנכ&quot;ל תפעול וטכנולוגיות</p>
-                  </div>
-
+                </div>
+                <div className="mt-3.5 pr-1">
+                  <h4 className="text-lg font-bold text-white mb-0.5">אופק אוקונסקי</h4>
+                  <p className="text-sm text-emerald-400 font-medium">מייסד שותף, סמנכ&quot;ל תפעול וטכנולוגיות</p>
                 </div>
               </div>
 
@@ -822,21 +821,28 @@ export default function LandingPage() {
 
             {/* Content Column */}
             <div className="lg:col-span-7 order-1 lg:order-2 text-right">
-              <span className="text-xs font-bold text-[#2563EB] tracking-wider uppercase mb-3 block">שותפים לדרך</span>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] mb-6">
+              <span className="text-xs font-bold text-sky-400 tracking-wider uppercase mb-3 block">שותפים לדרך</span>
+              <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6">
                 נעים להכיר, אנחנו האנשים שלוקחים אחריות על הסחורה שלך
               </h2>
               
-              <div className="space-y-6 text-[#475569] text-sm md:text-base leading-relaxed">
+              <div className="space-y-6 text-slate-300 text-sm md:text-base leading-relaxed">
                 <p>
-                  הקמנו את החברה הזו אחרי שנים שראינו את אותו הסיפור המרגיז חוזר על עצמו: בעלי עסקים ויזמים מדהימים בישראל שעובדים קשה מהבוקר עד הלילה, אבל בסוף החודש לא נשאר להם כמעט כלום בכיס – רק בגלל שהסיטונאים והספקים בארץ שוחטים אותם במחירים.
+                  הקמנו את Nexora אחרי שנים שראינו את אותו הסיפור חוזר על עצמו: בעלי עסקים ויזמים מדהימים בישראל שעובדים קשה מהבוקר עד הלילה, אבל בסוף החודש לא נשאר להם כמעט כלום בכיס – רק בגלל שהסיטונאים והספקים בארץ שוחטים אותם במחירים.
                 </p>
-                <p>
-                  כשהיינו שואלים אותם "למה אתם לא מייבאים ישירות?", כולם היו עונים לנו בדיוק את אותו הדבר: <span className="font-semibold text-slate-800">"עזבו אתכם, אין לנו זמן לבלגן הזה, זה מפחיד, יעקצו אותנו בסין, המכס יתקע אותנו והכסף ילך לפח"</span>.
-                </p>
-                <p className="font-medium text-slate-900 border-r-4 border-emerald-500 pr-4">
-                  הבנו שיש כאן בעיה ענקית. החלטנו לחבר את הניסיון, הקשרים והידע של שנינו בעולם הלוגיסטיקה, הרכש ועמילות המכס, ולבנות גוף שנותן פתרון אחד ברור: אנחנו נהיה הגב שלכם בשטח. המטרה שלנו היא לפתוח את השוק העולמי לכל עסק בישראל, ולהוכיח לכם שאתם יכולים לשלם חצי מחיר על המוצרים שלכם – בלי לעבוד דקה אחת קשה יותר.
-                </p>
+                
+                <blockquote className="border-r-4 border-blue-500/50 pr-4 my-6 italic text-slate-200 bg-blue-950/20 py-3 pl-3 rounded-l-lg">
+                  "כשהיינו שואלים אותם 'למה אתם לא מייבאים ישירות?', כולם היו עונים לנו בדיוק את אותו הדבר: 'עזבו אתכם, אין לנו זמן לבלגן הזה, זה מפחיד, יעקצו אותנו בסין, המכס יתקע אותנו והכסף ילך לפח'."
+                </blockquote>
+
+                <div className="border-r-4 border-[#10B981] pr-4 space-y-4">
+                  <p className="font-medium text-slate-200">
+                    הבנו שיש כאן בעיה ענקית. החלטנו לקחת את הכלים, מערכות הניהול והחשיבה הטכנולוגית שהבאנו מעולם ההייטק, ולחבר אותם לניסיון, לקשרים ולידע שלנו בעולם הלוגיסטיקה, הרכש ועמילות המכס.
+                  </p>
+                  <p className="font-medium text-slate-200">
+                    התוצאה היא <span className="text-white font-bold">Nexora</span> – גוף מודרני שנותן פתרון אחד ברור ומבוסס דאטה: אנחנו נהיה הגב שלכם בשטח, עם שקיפות מלאה ומעקב דינמי. המטרה שלנו היא לפתוח את השוק העולמי לכל עסק בישראל, ולהוכיח לכם שאתם יכולים לשלם חצי מחיר על המוצרים שלכם – בלי לעבוד דקה אחת קשה יותר.
+                  </p>
+                </div>
               </div>
             </div>
 
