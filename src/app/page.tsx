@@ -718,56 +718,52 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-[#3B82F6] tracking-wider uppercase mb-3 block">הפתרון: נוסחת ה-CPB</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-6">
               להביא את חו"ל לדלת העסק – בביטחון של קנייה בארץ
             </h2>
-            <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-              הטענה שלנו: בעזרת מעטפת הייבוא המלאה שלנו, לקנות ישירות מהמפעל בחו"ל הופך להיות פשוט, שקוף ובטוח בדיוק כמו לקנות מספק בתל אביב – <span className="text-[#10B981] font-bold">רק ברבע מהמחיר.</span>
+            <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+              מעטפת הייבוא המלאה של Nexora הופכת את הרכישה ישירות מהמפעל בחו"ל לתהליך פשוט, שקוף ובטוח – <span className="text-[#10B981] font-bold">בדיוק כמו לקנות מספק בארץ, רק ברבע מהמחיר.</span>
             </p>
           </div>
 
           {/* 3 Columns Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            {/* Column 1: הוזלת עלויות (הכסף) */}
-            <div className="bg-slate-900/60 border border-slate-800/80 p-8 rounded-2xl hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300 group hover:-translate-y-1">
+            {/* Column 1: הוזלת עלויות */}
+            <div className="bg-slate-900/60 border border-slate-800/80 p-8 sm:p-10 rounded-2xl hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300 group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                 <DollarSign className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
+              <h3 className="text-xl font-extrabold text-white mb-3">
                 הוזלת עלויות
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">הכסף</span>
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
                 אנחנו חותכים את כל פערי התיווך והסיטונאים באמצע. אתה מקבל "מחיר נחיתה" סופי, נמוך וידוע מראש לכל מוצר – בלי הפתעות ובלי אותיות קטנות בנמלים.
               </p>
             </div>
 
-            {/* Column 2: חיסכון בזמן (הניהול) */}
-            <div className="bg-slate-900/60 border border-slate-800/80 p-8 rounded-2xl hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            {/* Column 2: חיסכון בזמן */}
+            <div className="bg-slate-900/60 border border-slate-800/80 p-8 sm:p-10 rounded-2xl hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/25 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                 <Clock className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
+              <h3 className="text-xl font-extrabold text-white mb-3">
                 חיסכון בזמן
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">הניהול</span>
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
                 יש לך מנהל תיק לקוח אישי בארץ, בעברית, שמנהל עבורך את כל הקצוות מקצה לקצה. אתה לא צריך לדעת אנגלית, לא להתעסק עם ניירת ולא לרוץ למכס – אנחנו עושים הכל.
               </p>
             </div>
 
-            {/* Column 3: ראש שקט (הביטחון) */}
-            <div className="bg-slate-900/60 border border-slate-800/80 p-8 rounded-2xl hover:border-slate-700 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
+            {/* Column 3: ראש שקט */}
+            <div className="bg-slate-900/60 border border-slate-800/80 p-8 sm:p-10 rounded-2xl hover:border-slate-700 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-slate-500/10 border border-slate-500/25 flex items-center justify-center text-slate-400 mb-6 group-hover:scale-110 transition-transform">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold mb-4 text-white flex items-center gap-2">
+              <h3 className="text-xl font-extrabold text-white mb-3">
                 ראש שקט
-                <span className="text-xs font-mono px-2 py-0.5 rounded bg-slate-500/10 text-slate-400">הביטחון</span>
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
                 השקט הנפשי לדעת שהכסף והסחורה שלך נמצאים תחת השגחה קפדנית ובטוחה, בזמן שאתה מתרכז רק בדבר אחד: לשווק, למכור ולהביא כסף הביתה.
               </p>
             </div>
