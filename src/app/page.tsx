@@ -645,59 +645,65 @@ export default function LandingPage() {
       {/* SECTION 2: PAIN SECTION */}
       <section 
         id="pain" 
-        className="py-24 bg-[#F8FAFC] border-y border-slate-200"
+        className="py-24 bg-[#0B0F19] border-y border-slate-800/80 text-white relative overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        {/* Subtle glow background */}
+        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] rounded-full bg-red-500/5 blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           
           {/* Broken coin / warning icon */}
-          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto mb-6 text-amber-600 animate-bounce">
+          <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center mx-auto mb-6 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.15)] animate-bounce">
             <AlertTriangle className="w-8 h-8" />
           </div>
 
-          <h2 className="text-2xl md:text-4xl font-extrabold text-[#0F172A] tracking-tight mb-8">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-8">
             הסוד שספקי המוצרים בארץ לא רוצים שתגלו
           </h2>
 
-          <div className="text-right text-[#1E293B] space-y-6 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-            <p className="font-semibold text-slate-900">
-              כשאתה קונה סחורה מספק, יבואן גדול או סיטונאי כאן בארץ, זה מרגיש לך "קל ובטוח". אתה מרים טלפון, משלם, ומקבל משטח למחסן.
+          <div className="text-right text-slate-300 space-y-6 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="font-medium text-slate-200">
+              לקנות מיבואן או סיטונאי מקומי מרגיש קל ובטוח – מרימים טלפון, משלמים ומקבלים משטח למחסן. אבל מה באמת קורה בפועל?
             </p>
-            <p>
-              אבל בפועל? <span className="font-bold text-[#EF4444] underline decoration-wavy decoration-2">אתה משלם לו קנס ענק סתם</span>. אתה משלם על המשרדים המפוארים שלו, על אנשי המכירות שלו, ועל מתח הרווחים המטורף שהוא גוזר עליך באמצע. הכסף הזה יוצא ישירות מכיס של העסק שלך ומוריד לך את שורת הרווח לחצי.
+            <p className="text-slate-300">
+              אתם משלמים <span className="text-red-400 font-bold">קנס תיווך ענק</span> שמממן משרדים מפוארים, אנשי מכירות ומתחי רווחים מטורפים של אחרים. הכסף הזה יוצא ישירות מהכיס של העסק שלכם וחותך את שורת הרווח שלכם בחצי.
             </p>
             
             {/* interactive Supply Chain Leak Chart */}
-            <div className="my-10 p-4 sm:p-6 rounded-2xl bg-white border border-slate-200/80 shadow-md">
-              <h3 className="text-sm font-bold text-[#0F172A] mb-5 text-center">כך דולף הכסף שלך בשרשרת התיווך הישראלית:</h3>
-              <div className="space-y-4 max-w-xl mx-auto">
+            <div className="my-10 p-5 sm:p-8 rounded-2xl bg-[#0F172A]/70 border border-[#3B82F6]/30 shadow-[0_0_25px_rgba(59,130,246,0.08)] backdrop-blur-md">
+              <h3 className="text-base font-bold text-white mb-6 text-center">כך דולף הכסף שלך בשרשרת התיווך הישראלית:</h3>
+              
+              <div className="space-y-6 max-w-xl mx-auto">
                 {/* Factory cost */}
                 <div className="relative">
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs font-semibold mb-1 text-slate-500 gap-1">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm sm:text-base font-medium mb-1.5 text-slate-300 gap-1">
                     <span>מחיר במפעל בחו"ל</span>
-                    <span>30% מעלות המוצר</span>
+                    <span className="font-semibold text-slate-200">30% מעלות המוצר</span>
                   </div>
-                  <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-emerald-500 rounded-full" style={{ width: '30%' }} />
+                  <div className="w-full h-3.5 bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div className="h-full bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.3)]" style={{ width: '30%' }} />
                   </div>
                 </div>
+                
                 {/* Middlemen fee */}
                 <div>
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs font-semibold mb-1 text-[#EF4444] gap-1">
-                    <span>קנס סיטונאים ומתווכים בארץ (משרדים, מנהלים, רווחי יבואן)</span>
-                    <span className="font-bold">+ 70% קנס תיווך!</span>
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center text-sm sm:text-base font-medium mb-1.5 text-slate-300 gap-1">
+                    <span>קנס סיטונאים ומתווכים בארץ (משרדים, אנשי מכירות, מתחי רווח)</span>
+                    <span className="text-xl sm:text-2xl font-black text-red-500 tracking-wide drop-shadow-[0_0_12px_rgba(239,68,68,0.3)] animate-pulse">+ 70% קנס תיווך!</span>
                   </div>
-                  <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-red-500 rounded-full" style={{ width: '100%' }} />
+                  <div className="w-full h-4.5 bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div className="h-full bg-red-500 rounded-full shadow-[0_0_12px_rgba(239,68,68,0.4)]" style={{ width: '100%' }} />
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-slate-500 text-center mt-4">
+              
+              <p className="text-xs sm:text-sm text-slate-400 text-center mt-5">
                 * מבוסס על ממוצעי פער תיווך ברכש תעשייתי ומסחרי בישראל
               </p>
             </div>
 
-            <p>
-              הפחד הכל כך הגיוני שלך "לברוח מהבלגן של חו"ל" גורם לך להשאיר <span className="font-bold text-slate-900">עשרות אלפי שקלים על הרצפה בכל חודש</span> – פשוט כי אף אחד לא הראה לך שאפשר לעשות את זה אחרת, בלי שום כאב ראש מצידך.
+            <p className="mt-10 md:mt-12 text-slate-200">
+              הפחד 'לברוח מהבלגן של חו"ל' גורם לכם להשאיר <span className="font-bold text-white">עשרות אלפי שקלים על הרצפה בכל חודש</span> – פשוט כי אף אחד לא הראה לכם שיש דרך אחרת, בלי כאבי ראש ובלי פערי תיווך.
             </p>
           </div>
 
