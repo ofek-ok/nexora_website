@@ -413,7 +413,7 @@ export default function LandingPage() {
             {/* Scannable Benefits Section */}
             <div className="space-y-4 mb-8 md:mb-10 text-right max-w-2xl">
               <div 
-                className={`flex items-start gap-3 reveal cursor-pointer transition-all duration-300 hover:pr-2 ${hoveredBenefit === 1 ? 'pr-2' : ''}`}
+                className="flex items-start gap-3 reveal cursor-pointer"
                 onMouseEnter={() => setHoveredBenefit(1)}
                 onMouseLeave={() => setHoveredBenefit(null)}
               >
@@ -431,7 +431,7 @@ export default function LandingPage() {
               </div>
               
               <div 
-                className={`flex items-start gap-3 reveal reveal-delay-1 cursor-pointer transition-all duration-300 hover:pr-2 ${hoveredBenefit === 2 ? 'pr-2' : ''}`}
+                className="flex items-start gap-3 reveal reveal-delay-1 cursor-pointer"
                 onMouseEnter={() => setHoveredBenefit(2)}
                 onMouseLeave={() => setHoveredBenefit(null)}
               >
@@ -449,7 +449,7 @@ export default function LandingPage() {
               </div>
 
               <div 
-                className={`flex items-start gap-3 reveal reveal-delay-2 cursor-pointer transition-all duration-300 hover:pr-2 ${hoveredBenefit === 3 ? 'pr-2' : ''}`}
+                className="flex items-start gap-3 reveal reveal-delay-2 cursor-pointer"
                 onMouseEnter={() => setHoveredBenefit(3)}
                 onMouseLeave={() => setHoveredBenefit(null)}
               >
