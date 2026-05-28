@@ -1263,6 +1263,59 @@ export default function LandingPage() {
           <p className="text-xs mb-4">
             כל הזכויות שמורות © {new Date().getFullYear()} Nexora בע"מ. מיוצר בארץ, מביא מחו"ל.
           </p>
+          
+          {/* Social Links */}
+          <div className="flex justify-center gap-4 mb-6">
+            <a 
+              href="mailto:office@nexora.co.il" 
+              className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)] transition-all duration-300"
+              title="שלח מייל"
+              aria-label="שלח מייל ל-Nexora"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.instagram.com/nexora.co.il/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-pink-500 hover:shadow-[0_0_10px_rgba(236,72,153,0.3)] transition-all duration-300"
+              title="אינסטגרם"
+              aria-label="עמוד האינסטגרם של Nexora"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a 
+              href="https://www.facebook.com/nexora.co.il/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-600 hover:shadow-[0_0_10px_rgba(37,99,235,0.3)] transition-all duration-300"
+              title="פייסבוק"
+              aria-label="עמוד הפייסבוק של Nexora"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/nexora-logistics" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-400 hover:shadow-[0_0_10px_rgba(96,165,250,0.3)] transition-all duration-300"
+              title="לינקדאין"
+              aria-label="עמוד הלינקדאין של Nexora"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+
           <div className="flex justify-center gap-6 text-xs font-semibold text-slate-400">
             <a href="#hero" onClick={(e) => handleScrollTo(e, 'hero')} className="hover:text-white transition-colors">עמוד ראשי</a>
             <span className="text-slate-800">|</span>
