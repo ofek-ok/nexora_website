@@ -241,13 +241,12 @@ export default function LandingPage() {
           contact_name: fullName,
           email: email,
           phone: phone,
-          country: 'סין / ספק גלובלי',
-          industry: 'ייבוא מסחרי',
-          lead_source: 'דף נחיתה',
+          notes: product,
           deal_value: 0,
+          lead_source: 'דף נחיתה',
           assigned_owner_id: ownerId,
           status_id: statusId,
-          tags: ['בדיקת רווחיות חינם', 'דף נחיתה', `מוצר: ${product}`]
+          tags: ['בדיקת רווחיות חינם', 'דף נחיתה']
         });
 
         if (error) throw error;
@@ -261,11 +260,10 @@ export default function LandingPage() {
           contact_name: fullName,
           email: email,
           phone: phone,
-          country: 'סין / ספק גלובלי',
-          industry: 'ייבוא מסחרי',
-          lead_source: 'דף נחיתה',
+          notes: product,
           deal_value: 0,
-          tags: ['בדיקת רווחיות חינם', 'דף נחיתה', `מוצר: ${product}`],
+          lead_source: 'דף נחיתה',
+          tags: ['בדיקת רווחיות חינם', 'דף נחיתה'],
           created_at: new Date().toISOString()
         };
         localStorage.setItem('nexora_leads_mock', JSON.stringify([newLead, ...existingMocks]));
