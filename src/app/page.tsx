@@ -1301,7 +1301,7 @@ export default function LandingPage() {
               </svg>
             </a>
             <a 
-              href="https://www.linkedin.com/company/nexora-logistics" 
+              href="https://www.linkedin.com/company/nexorail/about/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-400 hover:shadow-[0_0_10px_rgba(96,165,250,0.3)] transition-all duration-300"
