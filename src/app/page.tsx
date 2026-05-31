@@ -57,6 +57,86 @@ export default function LandingPage() {
   // Hovered Benefit for SVG sync
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null);
 
+  // Cookies consent state
+  const [showCookieBanner, setShowCookieBanner] = useState(false);
+
+  // Accessibility state
+  const [accessibilityOpen, setAccessibilityOpen] = useState(false);
+  const [accGrayscale, setAccGrayscale] = useState(false);
+  const [accHighContrast, setAccHighContrast] = useState(false);
+  const [accLargeText, setAccLargeText] = useState(false);
+  const [accReadableFont, setAccReadableFont] = useState(false);
+  const [accHighlightLinks, setAccHighlightLinks] = useState(false);
+
+  // Load cookies and accessibility settings on mount
+  useEffect(() => {
+    // Cookie banner
+    const consent = localStorage.getItem('nexora-cookie-consent');
+    if (!consent) {
+      setShowCookieBanner(true);
+    }
+
+    // Accessibility settings
+    const storedGrayscale = localStorage.getItem('acc-grayscale') === 'true';
+    const storedHighContrast = localStorage.getItem('acc-high-contrast') === 'true';
+    const storedLargeText = localStorage.getItem('acc-large-text') === 'true';
+    const storedReadableFont = localStorage.getItem('acc-readable-font') === 'true';
+    const storedHighlightLinks = localStorage.getItem('acc-highlight-links') === 'true';
+
+    setAccGrayscale(storedGrayscale);
+    setAccHighContrast(storedHighContrast);
+    setAccLargeText(storedLargeText);
+    setAccReadableFont(storedReadableFont);
+    setAccHighlightLinks(storedHighlightLinks);
+  }, []);
+
+  // Sync classes to body element when accessibility states change
+  useEffect(() => {
+    const bodyClass = document.body.classList;
+    
+    if (accGrayscale) bodyClass.add('acc-grayscale');
+    else bodyClass.remove('acc-grayscale');
+
+    if (accHighContrast) bodyClass.add('acc-high-contrast');
+    else bodyClass.remove('acc-high-contrast');
+
+    if (accLargeText) bodyClass.add('acc-large-text');
+    else bodyClass.remove('acc-large-text');
+
+    if (accReadableFont) bodyClass.add('acc-readable-font');
+    else bodyClass.remove('acc-readable-font');
+
+    if (accHighlightLinks) bodyClass.add('acc-highlight-links');
+    else bodyClass.remove('acc-highlight-links');
+
+    // Save to localStorage
+    localStorage.setItem('acc-grayscale', String(accGrayscale));
+    localStorage.setItem('acc-high-contrast', String(accHighContrast));
+    localStorage.setItem('acc-large-text', String(accLargeText));
+    localStorage.setItem('acc-readable-font', String(accReadableFont));
+    localStorage.setItem('acc-highlight-links', String(accHighlightLinks));
+  }, [accGrayscale, accHighContrast, accLargeText, accReadableFont, accHighlightLinks]);
+
+  // Cookie Actions
+  const handleAcceptCookies = () => {
+    localStorage.setItem('nexora-cookie-consent', 'accepted');
+    setShowCookieBanner(false);
+  };
+
+  const handleDeclineCookies = () => {
+    localStorage.setItem('nexora-cookie-consent', 'declined');
+    setShowCookieBanner(false);
+  };
+
+  // Reset Accessibility
+  const handleResetAccessibility = () => {
+    setAccGrayscale(false);
+    setAccHighContrast(false);
+    setAccLargeText(false);
+    setAccReadableFont(false);
+    setAccHighlightLinks(false);
+  };
+
   // Parallax tilt effect
   const [parallax, setParallax] = useState({ x: 0, y: 0 });
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -1329,6 +1409,173 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* COOKIE CONSENT BANNER */}
+      {showCookieBanner && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-2xl w-[calc(100%-2rem)] bg-slate-950/95 backdrop-blur-md border border-slate-800 p-5 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-4 items-center justify-between text-right animate-scale-in">
+          <div className="flex-1">
+            <h4 className="text-sm font-bold text-white mb-1 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-blue-400">
+                <path d="M12 2a10 10 0 1 0 10 10c0-1.5-1-2.5-2.5-2.5S17 8.5 17 7s1-2.5-.5-3.5C15 2 13.5 2 12 2Z"/>
+                <path d="M12 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm-4 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm-6 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+              </svg>
+              הודעה על שימוש בעוגיות (Cookies)
+            </h4>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              אנו משתמשים בעוגיות כדי לשפר את חווית הגלישה שלך, להציג תכנים מותאמים אישית ולנתח את תנועת הגולשים באתר, בהתאם לחוק הגנת הפרטיות ותקנה 17. המשך הגלישה מהווה הסכמה למדיניות זו.
+            </p>
+          </div>
+          <div className="flex gap-3 w-full md:w-auto justify-end">
+            <button
+              onClick={handleAcceptCookies}
+              className="px-5 py-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold rounded-xl text-xs transition-all shadow-md shadow-blue-600/20 active:scale-95 cursor-pointer"
+            >
+              אישור והמשך
+            </button>
+            <button
+              onClick={handleDeclineCookies}
+              className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-xl text-xs transition-all active:scale-95 cursor-pointer"
+            >
+              המשך ללא אישור
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ACCESSIBILITY FLOATING WIDGET */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        {/* Toggle Button */}
+        <button
+          onClick={() => setAccessibilityOpen(!accessibilityOpen)}
+          className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 active:scale-95 cursor-pointer ${
+            accessibilityOpen 
+              ? 'bg-[#2563EB] text-white rotate-90 shadow-blue-600/30' 
+              : 'bg-slate-900 border border-slate-800 text-blue-400 hover:text-white hover:border-blue-500 shadow-black/50'
+          }`}
+          title="תפריט נגישות"
+          aria-label="תפריט נגישות"
+        >
+          {accessibilityOpen ? (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+              <circle cx="12" cy="5" r="1.5" />
+              <path d="m9 20 3-6 3 6" />
+              <path d="m6 8 6 2 6-2" />
+              <path d="M12 10v4" />
+            </svg>
+          )}
+        </button>
+
+        {/* Accessibility Menu */}
+        {accessibilityOpen && (
+          <div className="absolute bottom-18 right-0 w-72 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-2xl p-5 shadow-2xl text-right animate-scale-in">
+            <h3 className="text-sm font-bold text-white mb-4 border-b border-slate-800 pb-2 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-blue-400">
+                <circle cx="12" cy="5" r="1.5" />
+                <path d="m9 20 3-6 3 6" />
+                <path d="m6 8 6 2 6-2" />
+                <path d="M12 10v4" />
+              </svg>
+              הגדרות נגישות
+            </h3>
+
+            <div className="space-y-3.5">
+              {/* Option 1: Large Text */}
+              <button
+                onClick={() => setAccLargeText(!accLargeText)}
+                className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+                  accLargeText
+                    ? 'bg-blue-600/10 border-blue-500 text-blue-400'
+                    : 'bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`}
+              >
+                <span>הגדלת גופן (טקסט גדול)</span>
+                <span className={`w-2.5 h-2.5 rounded-full ${accLargeText ? 'bg-blue-500' : 'bg-slate-700'}`} />
+              </button>
+
+              {/* Option 2: High Contrast */}
+              <button
+                onClick={() => setAccHighContrast(!accHighContrast)}
+                className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+                  accHighContrast
+                    ? 'bg-blue-600/10 border-blue-500 text-blue-400'
+                    : 'bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`}
+              >
+                <span>ניגודיות גבוהה</span>
+                <span className={`w-2.5 h-2.5 rounded-full ${accHighContrast ? 'bg-blue-500' : 'bg-slate-700'}`} />
+              </button>
+
+              {/* Option 3: Grayscale */}
+              <button
+                onClick={() => setAccGrayscale(!accGrayscale)}
+                className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+                  accGrayscale
+                    ? 'bg-blue-600/10 border-blue-500 text-blue-400'
+                    : 'bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`}
+              >
+                <span>גווני אפור (שחור-לבן)</span>
+                <span className={`w-2.5 h-2.5 rounded-full ${accGrayscale ? 'bg-blue-500' : 'bg-slate-700'}`} />
+              </button>
+
+              {/* Option 4: Readable Font */}
+              <button
+                onClick={() => setAccReadableFont(!accReadableFont)}
+                className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+                  accReadableFont
+                    ? 'bg-blue-600/10 border-blue-500 text-blue-400'
+                    : 'bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`}
+              >
+                <span>גופן קריא ופשוט</span>
+                <span className={`w-2.5 h-2.5 rounded-full ${accReadableFont ? 'bg-blue-500' : 'bg-slate-700'}`} />
+              </button>
+
+              {/* Option 5: Highlight Links */}
+              <button
+                onClick={() => setAccHighlightLinks(!accHighlightLinks)}
+                className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-xs font-semibold transition-all cursor-pointer ${
+                  accHighlightLinks
+                    ? 'bg-blue-600/10 border-blue-500 text-blue-400'
+                    : 'bg-slate-900/50 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`}
+              >
+                <span>הדגשת קישורים</span>
+                <span className={`w-2.5 h-2.5 rounded-full ${accHighlightLinks ? 'bg-blue-500' : 'bg-slate-700'}`} />
+              </button>
+            </div>
+
+            {/* Reset & Accessibility Statement */}
+            <div className="mt-4 pt-3.5 border-t border-slate-800 flex justify-between items-center gap-3">
+              <button
+                onClick={handleResetAccessibility}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-bold rounded-lg transition-all cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                איפוס הגדרות
+              </button>
+              <a
+                href="#accessibility-statement"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("הצהרת נגישות: אתר זה מונגש ומותאם לגלישה עבור אנשים עם מוגבלות בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות. אם נתקלתם בבעיית נגישות כלשהי, אנא פנו אלינו בדוא\"ל או בוואטסאפ ונשמח לסייע.");
+                }}
+                className="text-[10px] text-slate-400 hover:text-white underline font-semibold"
+              >
+                הצהרת נגישות
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
 
     </div>
   );
