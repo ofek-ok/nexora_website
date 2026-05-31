@@ -1267,7 +1267,9 @@ export default function LandingPage() {
           {/* Social Links */}
           <div className="flex justify-center gap-4 mb-6">
             <a 
-              href="mailto:office@nexora.co.il" 
+              href="https://tr.ee/r7EA09sDS-" 
+              target="_blank" 
+              rel="noopener noreferrer" 
               className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 hover:shadow-[0_0_10px_rgba(59,130,246,0.3)] transition-all duration-300"
               title="שלח מייל"
               aria-label="שלח מייל ל-Nexora"
