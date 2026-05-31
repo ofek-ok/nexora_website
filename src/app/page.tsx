@@ -38,6 +38,7 @@ export default function LandingPage() {
   const [product, setProduct] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   // Simple self-contained Toast State
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
@@ -210,6 +211,10 @@ export default function LandingPage() {
       showToast('אנא מלא את כל השדות', 'error');
       return;
     }
+    if (!agreedToTerms) {
+      showToast('עליך לאשר את תנאי השימוש ומדיניות הפרטיות', 'error');
+      return;
+    }
 
     setIsSubmitting(true);
 
@@ -275,6 +280,7 @@ export default function LandingPage() {
       setEmail('');
       setPhone('');
       setProduct('');
+      setAgreedToTerms(false);
     } catch (error) {
       console.error(error);
       showToast('אירעה שגיאה בשליחת הטופס. אנא נסה שנית.', 'error');
@@ -1233,6 +1239,32 @@ export default function LandingPage() {
                       <Package className="w-4 h-4" />
                     </div>
                   </div>
+                </div>
+
+                {/* Privacy and terms checkbox */}
+                <div className="flex items-start gap-3 mt-4 pr-1">
+                  <input
+                    type="checkbox"
+                    id="agreedToTerms"
+                    required
+                    checked={agreedToTerms}
+                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                    className="w-4 h-4 rounded border-slate-800 bg-slate-950/80 text-blue-600 focus:ring-blue-500/25 outline-none cursor-pointer mt-1"
+                  />
+                  <label htmlFor="agreedToTerms" className="text-xs text-slate-300 leading-relaxed cursor-pointer select-none">
+                    אני מאשר כי מסירת הפרטים בטופס זה נעשית מרצוני החופשי ובהסכמתי המלאה, ואני מסכים ל
+                    <a
+                      href="#privacy-policy"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        alert("מדיניות פרטיות ותנאי שימוש: המידע שאתה מוסר בטופס זה (שם, טלפון, מייל ופרטי מוצר) נאסף אך ורק לצורך יצירת קשר, בדיקת היתכנות ייבוא והתאמת השירות עבור העסק שלך. אנו מתחייבים לשמור על סודיות המידע ולא להעבירו לצד ג' ללא הסכמתך.");
+                      }}
+                      className="text-blue-400 hover:text-blue-300 underline font-semibold mx-1"
+                    >
+                      מדיניות הפרטיות ותנאי השימוש
+                    </a>
+                    של האתר.
+                  </label>
                 </div>
 
                 {/* Submit button (Emerald green success color) */}
